@@ -39,7 +39,7 @@ runs:
         -d @- << EOF
         {
           "title": "$TITLE",
-          "body": "$DESCRIPTION",
+          "body": "$DESCRIPTION"
         }
         EOF
         )
