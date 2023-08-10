@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: CI
+    # Only run cron on the emteknetnz account
+    if: (github.event_name == 'schedule' && github.repository_owner == 'emteknetnz') || (github.event_name != 'schedule')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch CI
+        uses: emteknetnz/action-ci@main
